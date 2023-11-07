@@ -1,7 +1,7 @@
-const { getPort } = require('../initConditions.js');
+const { getSerialPort } = require('../initConditions.js');
 
 function sendString(string) {
-    const port = getPort();
+    const port = getSerialPort();
     if (port) {
         port.write(string);
     } 

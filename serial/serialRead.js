@@ -1,10 +1,10 @@
 const SerialPort = require('serialport');
 const { ReadlineParser } = require('@serialport/parser-readline');
-const { getPort } = require('../initConditions.js');
+const { getSerialPort } = require('../initConditions.js');
 
 
 function readData() {
-  const parser = getPort().pipe(new ReadlineParser({ delimiter: '\n' }));
+  const parser = getSerialPort().pipe(new ReadlineParser({ delimiter: '\n' }));
   console.log('- Escuchando puerto.')
   parser.on('data', (data) => {
     console.log(data);
